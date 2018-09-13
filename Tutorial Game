@@ -11,7 +11,7 @@ public class Main {
 			Random rand = new Random();
 			
 			// Game Variables
-			String[] enemies = { "Skeleton","Zombie","Warrior","Assassin" };
+			String[] enemies = { "Hobo","Hoodlum","Gangsta","Drug Dealer" };
 			int maxEnemyHealth = 75;
 			int enemyAttackDamage = 25;
 			
@@ -20,11 +20,11 @@ public class Main {
 			int attackDamage = 50;
 			int numHealthPotions = 3;
 			int healthPotionHealAmount = 30;
-			int healthPotionDropChance = 99; //Percentage
+			int healthPotionDropChance = 50; //Percentage
 			
 			boolean running = true;
 			
-			System.out.println("Welcome!");
+			System.out.println("Welcome to the hood!");
 			
 			GAME:
 			while(running) {
@@ -38,9 +38,9 @@ public class Main {
 					System.out.println("\tYour HP: " +health);
 					System.out.println("\t" + enemy + "'s HP: " + enemyHealth);
 					System.out.println("\n\tWhat would you like to do?");
-					System.out.println("\t1. Attack");
-					System.out.println("\t2. Drink health potion");
-					System.out.println("\t3 Run!");
+					System.out.println("\t1. Let it bang");
+					System.out.println("\t2. Drink some lean");
+					System.out.println("\t3 Dip out!");
 					
 					String input = in.nextLine();
 					if(input.equals("1")) {
@@ -50,11 +50,11 @@ public class Main {
 						enemyHealth -= damageDealt;
 						health -= damageTaken;
 						
-						System.out.println("\t> You strike the " + enemy + " for " + damageDealt + " damage.");
+						System.out.println("\t> You shoot the " + enemy + " for " + damageDealt + " damage.");
 						System.out.println("\t> You receive " + damageTaken + " in retaliation!");
 						
 						if(health < 1) {
-							System.out.println("\t> You have taken too much damage, you are too weak to go on!");
+							System.out.println("\t> You getting jacked up!");
 							break;
 						}
 						
@@ -64,12 +64,12 @@ public class Main {
 						if(numHealthPotions > 0) {
 							health += healthPotionHealAmount;
 							numHealthPotions--;
-							System.out.println("\t> You drink a health potion, healing yourself for " + healthPotionHealAmount + "."
+							System.out.println("\t> You drink some lean, healing yourself for " + healthPotionHealAmount + "."
 												+ "\n\t> You now have " + health + " HP."
-												+ "\n\t> You have " + numHealthPotions + " health potions left. \n");
+												+ "\n\t> You have " + numHealthPotions + " bottle(s) of lean left. \n");
 						}
 						else {
-							System.out.println("\t> You have no health potions left! Defeat enemies for a chance to get one!");
+							System.out.println("\t> You ain't got no mo lean! Blast some suckas for more!");
 							
 						}
 					}
@@ -85,23 +85,23 @@ public class Main {
  			}
 			
 			if(health < 1) {
-				System.out.println("You limp out of the dungeon, weak from battle.");
+				System.out.println("Damn homie, you got jacked up.");
 				break;
 			}
 			
 			System.out.println("----------------------");
-			System.out.println(" # " + enemy + " was defeated! #");
+			System.out.println(" # " + enemy + " was blasted! #");
 			System.out.println(" # You have " + health + " HP left. #");
 			if(rand.nextInt(100) < healthPotionDropChance) {
 				numHealthPotions++;
-				System.out.println(" # The " + enemy + " dropped a health potion! # ");
-				System.out.println(" # You now have " + numHealthPotions + " health potion(s). # ");
+				System.out.println(" # The " + enemy + " dropped some lean! # ");
+				System.out.println(" # You now have " + numHealthPotions + " bottle(s) of lean. # ");
 			}
 			
 			System.out.println("----------------------");
-			System.out.println("What would you like to do now?");
-			System.out.println("1. Continue fighting");
-			System.out.println("2. Exit dungeon");
+			System.out.println("What you finna do now homie?");
+			System.out.println("1. Blast some mofos");
+			System.out.println("2. Dipset");
 			
 			String input = in.nextLine();
 			
@@ -110,10 +110,10 @@ public class Main {
 					input = in.nextLine();
 				}
 				if(input.equals("1")) {
-					System.out.println("You continue on your adventure.");
+					System.out.println("You drive on, looking for some suckas.");
 				}
 				else if(input.equals("2")) {
-					System.out.println("You exit the dungeon, successful from your adventures.");
+					System.out.println("You drive out of the hood, with a pocket full of money.");
 					break;
 				}	
 		}
