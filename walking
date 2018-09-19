@@ -1,0 +1,67 @@
+package TextGame;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+import TextGame.Main;
+
+
+
+public class Walking {
+	public static void main(String[] args) throws InterruptedException {
+	
+		Scanner in = new Scanner(System.in);
+		Random rand = new Random();
+		
+		boolean running = true;
+		while (running){
+		
+			int encounterChance = 40;
+			
+	String[] directions = {"Left" , "Right" , "Straight" , "Go back"};
+	System.out.println("\tYou come to an intersection. Which way do you want to go?");
+	System.out.println("\n\t1. Turn Left.");
+	System.out.println("\t2. Turn Right.");
+	System.out.println("\t3. Go Straight.");
+	System.out.println("\t4. Go Back.");
+	
+	String input = in.nextLine();
+	if(input.equals("1")){
+		System.out.println("\tYou turn left.");
+		if(rand.nextInt(100) < encounterChance){
+			System.out.println("test");
+			break;
+		}
+	}
+	else if(input.equals("2")){
+		System.out.println("\tYou turn right.");
+		if(rand.nextInt(100) < encounterChance){
+			System.out.println("test");
+			break;
+		}
+	}
+	else if(input.equals("3")){
+		System.out.println("\tYou head straight.");
+		if(rand.nextInt(100) < encounterChance){
+			System.out.println("test");
+			break;
+		}
+	}
+	else if (input.equals("4")){
+		System.out.println("\tYou go back the way you came.");
+		if(rand.nextInt(100) < encounterChance){
+			System.out.println("test");
+			break;
+		}
+	}
+	
+	while(!input.equals("1")){
+		System.out.println("Invalid command!");
+		input = in.nextLine();
+	}
+	
+	
+	
+	}
+	}
+	}
